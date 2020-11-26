@@ -1,0 +1,6 @@
+﻿# Add change column
+enable-migrations
+Add-Migration AddAddressToStudent
+Update-Database
+
+#

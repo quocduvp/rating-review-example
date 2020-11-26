@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Rating";
+}
+
+@section jsFooter {
+    <script src="~/Scripts/Handler/AuthenMiddle.js"></script>
+    <script src="~/Scripts/Handler/Rating.js"></script>
+    <script src="~/Scripts/Handler/DropdownMenu.js"></script>
+}
+
+@RenderPage("~/Views/Shared/_MenuTop.cshtml")
+
+<div>
+    <h1 style="text-transform: uppercase">Đánh Giá Chất Lượng Dịch Vụ</h1>
+    <h4 class="text-secondary">
+        Bạn đang đánh giá chi nhánh <b class="text-dark">Phan Chu Trinh</b>
+    </h4>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10 col-md-10 col-lg-9 align-self-center bg-white mt-3 p-3"
+             style="box-shadow: 0 4px 17px -7px black">
+            <div>
+                <h6>
+                    <b id="service_question">
+                        
+                    </b>
+                </h6>
+            </div>
+            <div id="rating_response" class="text-center"></div>
+            <div id="list_ratings"
+                 class="d-flex justify-content-center mt-3"></div>
+            <div class="mt-3">
+                <textarea style="height: 140px"
+                          class="w-100"
+                          name="feedback"
+                          id="feedback"></textarea>
+            </div>
+            <div class="mt-2">
+                <button id="submit_review"
+                        class="btn btn-danger text-white"
+                        style="
+                    border-radius: 100px;
+                    box-shadow: 0 8px 6px -6px black;
+                    width: 150px;
+                  ">
+                    Đánh giá
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+@RenderPage("~/Views/Shared/_ModalView.cshtml")

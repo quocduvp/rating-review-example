@@ -1,0 +1,106 @@
+﻿<!-- Modal Select Services -->
+<div class="modal fade"
+     id="changeService"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="changeServiceLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="changeServiceLabel">
+                    Vui lòng nhập passcode
+                </h5>
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="text-left">
+                                <div class="mt-2">
+                                    <label for="change_service_password" class="text-dark"><b>Passcode</b></label>
+                                    <input type="password"
+                                           id="change_service_password"
+                                           class="form-control"
+                                           aria-describedby="change_service_password_help"
+                                           placeholder="***********" />
+                                    <small id="change_service_password_help"
+                                           class="form-text text-danger">
+                                    </small>
+                                </div>
+                                <div class="">
+                                    <label for="services" class="text-dark"><b>Chọn dịch vụ cần đổi</b></label>
+                                    <div class="row" id="modal_list_services">
+                                        <!-- render data -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button id="change_service" class="btn btn-danger text-white pl-4 pr-4"
+                        style="border-radius: 100px; box-shadow: 0 8px 6px -6px black">
+                    Đổi dịch vụ
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal logout -->
+<div class="modal fade"
+     id="logout"
+     tabindex="-1"
+     role="dialog"
+     aria-labelledby="logoutLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutLabel">Vui lòng nhập passcode</h5>
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="text-left">
+                                <div class="mt-2">
+                                    <label for="passwordLogout" class="text-dark"><b>Passcode</b></label>
+                                    <input type="password"
+                                           id="passwordLogout"
+                                           class="form-control"
+                                           aria-describedby="passwordLogoutHelpBlock"
+                                           placeholder="***********" />
+                                    <small id="passwordLogoutHelpBlock"
+                                           class="form-text text-danger">
+                                        
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button id="log_out" class="btn btn-danger text-white pl-4 pr-4"
+                        style="border-radius: 100px; box-shadow: 0 8px 6px -6px black">
+                    Đăng Xuất
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

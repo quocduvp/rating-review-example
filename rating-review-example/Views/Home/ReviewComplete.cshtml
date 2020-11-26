@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Review Complete";
+}
+
+@section jsFooter {
+    <script src="~/Scripts/Handler/AuthenMiddle.js"></script>
+    <script src="~/Scripts/Handler/ReviewComplete.js"></script>
+    <script src="~/Scripts/Handler/DropdownMenu.js"></script>
+}
+
+@RenderPage("~/Views/Shared/_MenuTop.cshtml")
+
+<div>
+    <h1 style="text-transform: uppercase">Đánh Giá Chất Lượng Dịch Vụ</h1>
+    <h4 class="text-secondary">
+        Bạn đang đánh giá chi nhánh <b class="text-dark">Phan Chu Trinh</b>
+    </h4>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10 col-md-10 col-lg-9 align-self-center bg-white mt-3 p-3"
+             style="box-shadow: 0 4px 17px -7px black">
+            <div class="text-center">
+                <img style="width: 100px" src="~/Assets/emoji/Asset.png" />
+            </div>
+            <div class="text-center mt-1">
+                <h4>
+                    <b>Cảm ơn đánh giá của bạn</b>
+                </h4>
+            </div>
+            <div class="text-center">
+                <p>
+                    ALT IELTS Gia Sư sẽ nỗ lực để đem đến nhiều trải nghiệm thú vị
+                    trong thời gian tơi. Hãy tiếp tục theo dỗi chúng tôi tại
+                    <b>ieltsgia.com</b>
+                </p>
+            </div>
+            <div class="mt-2">
+                <button id="submit_review"
+                        class="btn btn-danger text-white pr-5 pl-5"
+                        style="border-radius: 100px; box-shadow: 0 8px 6px -6px black">
+                    Đánh Giá Lại Từ Đầu (<span id="down_time">0</span>)
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@RenderPage("~/Views/Shared/_ModalView.cshtml")
