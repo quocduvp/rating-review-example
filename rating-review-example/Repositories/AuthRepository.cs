@@ -13,7 +13,7 @@ namespace rating_review_example.Repositories
     {
         private readonly Util _Util = Util.getInstance();
 
-        public object Login(LoginDto data)
+        public LoginReponse Login(LoginDto data)
         {
             using (var context = new DBContext())
             {
@@ -25,10 +25,10 @@ namespace rating_review_example.Repositories
                     {
                         throw new Exception("Mật khẩu không hợp lệ vui lòng nhập lại.");
                     }
-                    var token = _Util.JWT.Encode(passCode, 1);
+                    LoginReponse result = _Util.JWT.Encode(passCode, 1);
                     passCode.LoginAt = DateTime.Now;
                     context.SaveChanges();
-                    return new { Token = token };
+                    return result;
                 } catch (Exception ex)
                 {
                     throw ex;

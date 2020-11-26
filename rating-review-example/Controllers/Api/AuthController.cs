@@ -16,11 +16,11 @@ namespace rating_review_example.Controllers.Api
 
         [HttpPost]
         [Route("api/v1/auth/login")]
-        public IHttpActionResult register(LoginDto body)
+        public IHttpActionResult Login(LoginDto body)
         {
             try
             {
-                var result = this.baseRepository.AuthRepository.Login(body);
+                var result = baseRepository.AuthRepository.Login(body);
                 return Ok(result);
             } catch (Exception ex)
             {

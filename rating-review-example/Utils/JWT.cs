@@ -1,11 +1,13 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using rating_review_example.Models;
 using rating_review_example.Repositories;
+using rating_review_example.Repositories.Dto;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
@@ -15,7 +17,7 @@ namespace rating_review_example.Utils
     public class JWT
     {
         private const string Secret = "db3OIsj+BXE9NZDy0t8W3TcNekrF+2d/1sFnWG4HnV8TZY30iTOdtVWJG8abWvB1GlOgJuQZdcF2Luqm/hccMw==";
-        public string Encode(PassCode passCode, int expired = 1)
+        public LoginReponse Encode(PassCode passCode, int expired = 1)
         {
             var symmetricKey = Convert.FromBase64String(Secret);
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -38,8 +40,11 @@ namespace rating_review_example.Utils
 
             var stoken = tokenHandler.CreateToken(tokenDescriptor);
             var token = tokenHandler.WriteToken(stoken);
-
-            return token;
+            var refreshToken = generateRefreshToken();
+            return new LoginReponse { 
+                Token = token,
+                RefreshToken = refreshToken,
+            };
         }
 
         public int Verify(string token)
@@ -66,6 +71,16 @@ namespace rating_review_example.Utils
                 throw new Exception("Phiên đăng nhập không hợp lệ");
             }
             
+        }
+
+        private string generateRefreshToken()
+        {
+            using (var rngCryptoServiceProvider = new RNGCryptoServiceProvider())
+            {
+                var randomBytes = new byte[64];
+                rngCryptoServiceProvider.GetBytes(randomBytes);
+                return Convert.ToBase64String(randomBytes);
+            }
         }
     }
 }
