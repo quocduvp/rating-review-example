@@ -148,6 +148,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\ReviewController.cs" />
     <Compile Include="Controllers\Api\ServiceController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="CustomAuthorizeAttribute.cs" />
     <Compile Include="Context\DBContext.cs" />
     <Compile Include="Controllers\Api\AuthController.cs" />
